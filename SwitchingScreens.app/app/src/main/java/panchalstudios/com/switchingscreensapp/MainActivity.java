@@ -49,11 +49,20 @@ public class MainActivity extends ActionBarActivity {
         // We use startActivityForResult when we expect a result to be sent back
         final int result = 1;
 
+        Human bob = new Human(6.25, 180, "Bob");
+        Intent sendBob = new Intent(this,SecondScreen.class);
+        sendBob.putExtra("humanBob",bob);
+
+        startActivityForResult(sendBob, result);
+
+
+        /*
         // To send data use putExtra with a String name followed by its value
         getNameScreenIntent.putExtra("callingActivity", "MainActivity");
 
         // for Result will retrieve data
         startActivityForResult(getNameScreenIntent, result);
+        */
     }
 
     @Override
